@@ -2,7 +2,7 @@ cmake_minimum_required (VERSION 2.8)
 project(ActiveRestart)
 
 include_directories("${PROJECT_SOURCE_DIR}/include")
-SET(COVERAGE_COMPILE_FLAGS "-Wall -std=c++11")
+SET(COVERAGE_COMPILE_FLAGS "-Wall -std=c++17")
 SET(CMAKE_CXX_FLAGS_DEBUG "-DDEBUG -DCONSOLE_OUT")
 
 if(CMAKE_BUILD_TYPE EQUAL DEBUG)
@@ -19,4 +19,4 @@ add_executable(
   src/processQuery.cpp
 )
 
-target_link_libraries(ActiveRestart Psapi)
+target_link_libraries(ActiveRestart Psapi Shlwapi)
